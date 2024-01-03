@@ -13,5 +13,3 @@ In case of ERROR permission denied use:
 "http://127.0.0.1:1880/ui/" for node red UI 
 
 # Screenshots
-/home/admin-root/Pictures/Screenshot from 2024-01-03 03-39-45.png
-
