@@ -1,0 +1,653 @@
+[
+    {
+        "id": "8f0960ab84b82252",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3b08d9e09afa6f9d",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "edc95deda373a049",
+        "type": "postgresDB",
+        "name": "admin@database:5432/postgres",
+        "host": "database",
+        "port": "5432",
+        "database": "postgres",
+        "ssl": false,
+        "max": "10",
+        "min": 1,
+        "idle": "1000"
+    },
+    {
+        "id": "a1c5a5fde9822868",
+        "type": "postgreSQLConfig",
+        "name": "",
+        "host": "postgres",
+        "hostFieldType": "str",
+        "port": "5432",
+        "portFieldType": "num",
+        "database": "postgres",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "applicationName": "",
+        "applicationNameType": "str",
+        "max": "10",
+        "maxFieldType": "num",
+        "idle": "1000",
+        "idleFieldType": "num",
+        "connectionTimeout": "10000",
+        "connectionTimeoutFieldType": "num",
+        "user": "admin",
+        "userFieldType": "str",
+        "password": "admin",
+        "passwordFieldType": "str"
+    },
+    {
+        "id": "65e486a6e978cca6",
+        "type": "ui_tab",
+        "name": "Temperature/humidity readings",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "2389f11b17ec425b",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 95,
+                "sy": 95,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "b5a02987e8e36a85",
+        "type": "ui_group",
+        "name": "Temperature",
+        "tab": "65e486a6e978cca6",
+        "order": 1,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "434fb35a39524745",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "157.158.56.54",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "bd31abf269b80e4c",
+        "type": "ui_group",
+        "name": "Humidity",
+        "tab": "65e486a6e978cca6",
+        "order": 2,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "12a6ac9d15bc583f",
+        "type": "mqtt in",
+        "z": "8f0960ab84b82252",
+        "name": "",
+        "topic": "humidity",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "3b08d9e09afa6f9d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 260,
+        "wires": [
+            [
+                "5858e9115d2f3dce"
+            ]
+        ]
+    },
+    {
+        "id": "288caaefab2df9fa",
+        "type": "postgresql",
+        "z": "8f0960ab84b82252",
+        "name": "save to database",
+        "query": "insert into temperature(reading, date_time)\nvalues ({{{msg.payload}}}, now());",
+        "postgreSQLConfig": "a1c5a5fde9822868",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 490,
+        "y": 100,
+        "wires": [
+            [
+                "061dba776b6f6966"
+            ]
+        ]
+    },
+    {
+        "id": "ae4207db6503cbee",
+        "type": "mqtt in",
+        "z": "8f0960ab84b82252",
+        "name": "",
+        "topic": "temperature",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "3b08d9e09afa6f9d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 100,
+        "wires": [
+            [
+                "63a48225889beb76"
+            ]
+        ]
+    },
+    {
+        "id": "6feb077fc06db0ea",
+        "type": "postgresql",
+        "z": "8f0960ab84b82252",
+        "name": "save to database",
+        "query": "insert into humidity(reading, date_time)\nvalues ({{{msg.payload}}}, now());",
+        "postgreSQLConfig": "a1c5a5fde9822868",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 490,
+        "y": 260,
+        "wires": [
+            [
+                "08729b5797c2b51e"
+            ]
+        ]
+    },
+    {
+        "id": "08729b5797c2b51e",
+        "type": "postgresql",
+        "z": "8f0960ab84b82252",
+        "name": "select humidity",
+        "query": "select reading, date_time::time from humidity;",
+        "postgreSQLConfig": "a1c5a5fde9822868",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 700,
+        "y": 260,
+        "wires": [
+            [
+                "b136731b9ce1acec"
+            ]
+        ]
+    },
+    {
+        "id": "02001ae99a756a79",
+        "type": "ui_gauge",
+        "z": "8f0960ab84b82252",
+        "name": "Temperature gauge",
+        "group": "b5a02987e8e36a85",
+        "order": 1,
+        "width": "8",
+        "height": "3",
+        "gtype": "donut",
+        "title": "",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": "-20",
+        "max": "40",
+        "colors": [
+            "#1c71d8",
+            "#00b500",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 490,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "3c9b601504ba1276",
+        "type": "ui_gauge",
+        "z": "8f0960ab84b82252",
+        "name": "Humidity gauge",
+        "group": "bd31abf269b80e4c",
+        "order": 1,
+        "width": "8",
+        "height": "3",
+        "gtype": "donut",
+        "title": "",
+        "label": "%",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "100",
+        "colors": [
+            "#ffffff",
+            "#ffffff",
+            "#ffffff"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 480,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "061dba776b6f6966",
+        "type": "postgresql",
+        "z": "8f0960ab84b82252",
+        "name": "select temperature",
+        "query": "select reading, date_time::time from temperature;",
+        "postgreSQLConfig": "a1c5a5fde9822868",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 710,
+        "y": 100,
+        "wires": [
+            [
+                "e09c7567a4426bd5"
+            ]
+        ]
+    },
+    {
+        "id": "e09c7567a4426bd5",
+        "type": "function",
+        "z": "8f0960ab84b82252",
+        "name": "create temperature msg",
+        "func": "var payload = msg.payload;\nvar len = payload.length;\nvar reading_array = [];\nvar date_array = [];\nvar trend_array = [];\n\nfor(var i=0; i<len;i++) {\n    reading_array.push(msg.payload[i][\"reading\"]);\n    date_array.push(msg.payload[i][\"date_time\"].substring(0,5));\n}\n\nif (len > 0) trend_array.push(parseInt(reading_array[0]));\nif (len > 1) trend_array.push((parseInt(reading_array[0]) + parseInt(reading_array[1])) / 2);\nif (len > 2) trend_array.push((parseInt(reading_array[0]) + parseInt(reading_array[1]) +\n    parseInt(reading_array[2])) / 3);\nif (len > 3) trend_array.push((parseInt(reading_array[0]) + parseInt(reading_array[1]) +\n    parseInt(reading_array[2]) + parseInt(reading_array[3])) / 4);\nif (len > 4) {\n    for (var i = 4; i < len; i++) {\n        trend_array.push((parseInt(reading_array[i]) + parseInt(reading_array[i - 1]) +\n            parseInt(reading_array[i - 2]) + parseInt(reading_array[i - 3]) +\n            parseInt(reading_array[i - 4])) / 5);\n    }\n}\n\nmsg.payload = [{\n    \"series\": [\"Temperature\", \"Trend\"],\n    \"data\": [reading_array, trend_array],\n    \"labels\": date_array,\n}];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 100,
+        "wires": [
+            [
+                "cbb8c406dc638a9a"
+            ]
+        ]
+    },
+    {
+        "id": "cbb8c406dc638a9a",
+        "type": "ui_chart",
+        "z": "8f0960ab84b82252",
+        "name": "Temperature chart",
+        "group": "b5a02987e8e36a85",
+        "order": 2,
+        "width": "8",
+        "height": "5",
+        "label": "Reading,Trend/Time",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "Waiting for data",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1190,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b136731b9ce1acec",
+        "type": "function",
+        "z": "8f0960ab84b82252",
+        "name": "create humidity msg",
+        "func": "var payload = msg.payload;\nvar len = payload.length;\nvar reading_array = [];\nvar date_array = [];\nvar trend_array = [];\n\nfor(var i=0; i<len;i++) {\n    reading_array.push(msg.payload[i][\"reading\"]);\n    date_array.push(msg.payload[i][\"date_time\"].substring(0,5));\n}\n\nif(len > 0) trend_array.push(parseInt(reading_array[0]));\nif (len > 1) trend_array.push((parseInt(reading_array[0]) + parseInt(reading_array[1])) / 2);\nif (len > 2) trend_array.push((parseInt(reading_array[0]) + parseInt(reading_array[1]) +\n    parseInt(reading_array[2])) / 3);\nif (len > 3) trend_array.push((parseInt(reading_array[0]) + parseInt(reading_array[1]) +\n    parseInt(reading_array[2]) + parseInt(reading_array[3])) / 4);\nif (len > 4) {\n    for (var i = 4; i < len; i++) {\n        trend_array.push((parseInt(reading_array[i]) + parseInt(reading_array[i - 1]) +\n            parseInt(reading_array[i - 2]) + parseInt(reading_array[i - 3]) +\n            parseInt(reading_array[i - 4])) / 5);\n    }\n}\n\nmsg.payload = [{\n    \"series\": [\"Humidity\", \"Trend\"],\n    \"data\": [reading_array, trend_array],\n    \"labels\": date_array,\n}];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 260,
+        "wires": [
+            [
+                "e6bd165bc42820a2"
+            ]
+        ]
+    },
+    {
+        "id": "e6bd165bc42820a2",
+        "type": "ui_chart",
+        "z": "8f0960ab84b82252",
+        "name": "Humidity chart",
+        "group": "bd31abf269b80e4c",
+        "order": 2,
+        "width": "8",
+        "height": "5",
+        "label": "Reading,Trend/Time",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "Waiting for data",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1180,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "998b9edb458bf2c1",
+        "type": "postgresql",
+        "z": "8f0960ab84b82252",
+        "name": "Del records older than 24h",
+        "query": "DELETE FROM temperature\nWHERE date_time < (now() - '24 hour'::interval);\n\nDELETE FROM humidity\nWHERE date_time < (now() - '24 hour'::interval);",
+        "postgreSQLConfig": "a1c5a5fde9822868",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 740,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "63a48225889beb76",
+        "type": "delay",
+        "z": "8f0960ab84b82252",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 290,
+        "y": 100,
+        "wires": [
+            [
+                "02001ae99a756a79",
+                "288caaefab2df9fa"
+            ]
+        ]
+    },
+    {
+        "id": "5858e9115d2f3dce",
+        "type": "delay",
+        "z": "8f0960ab84b82252",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 290,
+        "y": 260,
+        "wires": [
+            [
+                "6feb077fc06db0ea",
+                "3c9b601504ba1276"
+            ]
+        ]
+    },
+    {
+        "id": "a7682cde1a03c79e",
+        "type": "inject",
+        "z": "8f0960ab84b82252",
+        "name": "1m timestamp",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 500,
+        "y": 400,
+        "wires": [
+            [
+                "998b9edb458bf2c1"
+            ]
+        ]
+    },
+    {
+        "id": "13233ec58ac3e108",
+        "type": "inject",
+        "z": "8f0960ab84b82252",
+        "name": "run at the program start",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 470,
+        "y": 180,
+        "wires": [
+            [
+                "061dba776b6f6966",
+                "08729b5797c2b51e"
+            ]
+        ]
+    }
+]
