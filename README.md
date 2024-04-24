@@ -1,6 +1,6 @@
 # IoT dashboard
 A NodeRed project that receives MQTT messages (temperature and humidity), analyzes them and displays the statistics on the web dashboard.
-App consists of tow docker services - NodeRed and postgreSQL, conncted into one network.
+App consists two docker services - NodeRed and postgreSQL, conncted into one network.
 
 Requirements:
 - docker
